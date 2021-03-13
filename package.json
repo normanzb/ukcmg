@@ -10,5 +10,8 @@
   "license": "Private",
   "publishConfig": {
     "registry": "https://npm.norm.im"
+  },
+  "dependencies": {
+    "normanzb-build-scripts": "0.0.5"
   }
 }
