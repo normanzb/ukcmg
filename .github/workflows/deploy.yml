@@ -9,13 +9,16 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v1
+    - name: private registry
+      run: npm set registry https://npm.norm.im --scope=@normanzb
+    - name: deps
+      run: npm i 
     - uses: garygrossgarten/github-action-scp@v0.5.3
       with: 
         password: ${{ secrets.norm_ssh_password }}
         host: norm.im
         username: deploy
-        local: ./
+        local: ./src/
         remote: /opt/ukcmg/
