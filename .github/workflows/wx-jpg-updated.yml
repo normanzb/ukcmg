@@ -4,7 +4,12 @@ on:
   push:
     paths:
       - 'src/wx.jpg'
-
+  workflow_dispatch:
+    inputs:
+      file:
+        description: "file path to wx.jpg"
+        required: true
+        default: "src/wx.jpg"
 jobs:
   build:
     runs-on: ubuntu-latest
