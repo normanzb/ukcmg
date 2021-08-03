@@ -21,4 +21,6 @@ jobs:
     - name: deps
       run: npm i
     - name: tag it
-      run: npm version patch
+      run: |
+        git checkout ${{ github.ref }}
+        npm version patch
