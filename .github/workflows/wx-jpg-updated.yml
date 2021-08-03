@@ -4,6 +4,8 @@ on:
   push:
     paths:
       - 'src/wx.jpg'
+    branches:
+      - master
   workflow_dispatch:
     inputs:
       file:
@@ -22,5 +24,5 @@ jobs:
       run: npm i
     - name: tag it
       run: |
-        git checkout ${{ github.ref }}
+        git checkout master
         npm version patch
