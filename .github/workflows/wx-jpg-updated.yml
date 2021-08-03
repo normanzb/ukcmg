@@ -31,6 +31,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: dispatch deploy
       uses: peter-evans/repository-dispatch@v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          event-type: deploy
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        event-type: deploy
