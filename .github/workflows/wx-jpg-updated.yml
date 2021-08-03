@@ -10,9 +10,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
+    - uses: fregante/setup-git-user@v1
     - name: private registry
       run: npm set registry https://npm.norm.im --scope=@normanzb
     - name: deps
       run: npm i
     - name: tag it
       run: npm version patch
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
